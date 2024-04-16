@@ -3,10 +3,10 @@ const BLOG = {
   // Important page_id！！！Duplicate Template from  https://www.notion.so/tanghh/02ab3b8678004aa69e9e415905ef32a5
   NOTION_PAGE_ID:
     process.env.NOTION_PAGE_ID ||
-    '02ab3b8678004aa69e9e415905ef32a5,en:7c1d570661754c8fbc568e00a01fd70e',
+    '495230888b014c799aaf4be741ea22ff',
   PSEUDO_STATIC: process.env.NEXT_PUBLIC_PSEUDO_STATIC || false, // 伪静态路径，开启后所有文章URL都以 .html 结尾。
   NEXT_REVALIDATE_SECOND: process.env.NEXT_PUBLIC_REVALIDATE_SECOND || 5, // 更新内容缓存间隔 单位(秒)；即每个页面有5秒的纯静态期、此期间无论多少次访问都不会抓取notion数据；调大该值有助于节省Vercel资源、同时提升访问速率，但也会使文章更新有延迟。
-  THEME: process.env.NEXT_PUBLIC_THEME || 'simple', // 当前主题，在themes文件夹下可找到所有支持的主题；主题名称就是文件夹名，例如 example,fukasawa,gitbook,heo,hexo,landing,matery,medium,next,nobelium,plog,simple
+  THEME: process.env.NEXT_PUBLIC_THEME || 'heo', // 当前主题，在themes文件夹下可找到所有支持的主题；主题名称就是文件夹名，例如 example,fukasawa,gitbook,heo,hexo,landing,matery,medium,next,nobelium,plog,simple
   THEME_SWITCH: process.env.NEXT_PUBLIC_THEME_SWITCH || false, // 是否显示切换主题按钮
   LANG: process.env.NEXT_PUBLIC_LANG || 'zh-CN', // e.g 'zh-CN','en-US'  see /lib/lang.js for more.
   SINCE: process.env.NEXT_SINCE || 2021, // e.g if leave this empty, current year will be used.
@@ -235,7 +235,7 @@ const BLOG = {
 
   //   ********动态特效相关********
   // 鼠标点击烟花特效
-  FIREWORKS: process.env.NEXT_PUBLIC_FIREWORKS || false, // 开关
+  FIREWORKS: process.env.NEXT_PUBLIC_FIREWORKS || true, // 开关
   // 烟花色彩，感谢 https://github.com/Vixcity 提交的色彩
   FIREWORKS_COLOR: [
     '255, 20, 97',
@@ -284,10 +284,10 @@ const BLOG = {
     process.env.NEXT_PUBLIC_WIDGET_PET_SWITCH_THEME || true, // 点击宠物挂件切换博客主题
 
   // 音乐播放插件
-  MUSIC_PLAYER: process.env.NEXT_PUBLIC_MUSIC_PLAYER || false, // 是否使用音乐播放插件
+  MUSIC_PLAYER: process.env.NEXT_PUBLIC_MUSIC_PLAYER || true, // 是否使用音乐播放插件
   MUSIC_PLAYER_VISIBLE: process.env.NEXT_PUBLIC_MUSIC_PLAYER_VISIBLE || true, // 是否在左下角显示播放和切换，如果使用播放器，打开自动播放再隐藏，就会以类似背景音乐的方式播放，无法取消和暂停
   MUSIC_PLAYER_AUTO_PLAY:
-    process.env.NEXT_PUBLIC_MUSIC_PLAYER_AUTO_PLAY || true, // 是否自动播放，不过自动播放时常不生效（移动设备不支持自动播放）
+    process.env.NEXT_PUBLIC_MUSIC_PLAYER_AUTO_PLAY || false, // 是否自动播放，不过自动播放时常不生效（移动设备不支持自动播放）
   MUSIC_PLAYER_LRC_TYPE: process.env.NEXT_PUBLIC_MUSIC_PLAYER_LRC_TYPE || '0', // 歌词显示类型，可选值： 3 | 1 | 0（0：禁用 lrc 歌词，1：lrc 格式的字符串，3：lrc 文件 url）（前提是有配置歌词路径，对 meting 无效）
   MUSIC_PLAYER_CDN_URL:
     process.env.NEXT_PUBLIC_MUSIC_PLAYER_CDN_URL ||
@@ -295,20 +295,157 @@ const BLOG = {
   MUSIC_PLAYER_ORDER: process.env.NEXT_PUBLIC_MUSIC_PLAYER_ORDER || 'list', // 默认播放方式，顺序 list，随机 random
   MUSIC_PLAYER_AUDIO_LIST: [
     // 示例音乐列表。除了以下配置外，还可配置歌词，具体配置项看此文档 https://aplayer.js.org/#/zh-Hans/
-    {
-      name: '风を共に舞う気持ち',
-      artist: 'Falcom Sound Team jdk',
-      url: 'https://music.163.com/song/media/outer/url?id=731419.mp3',
-      cover:
-        'https://p2.music.126.net/kn6ugISTonvqJh3LHLaPtQ==/599233837187278.jpg'
+{
+        name: 'Who Do You Love (Explicit)',
+        artist: 'The Chainsmokers',
+        url: 'https://aws.ezdiy.top/usr/uploads/2024/03/855981162.mp3',
+cover: 'https://aws.ezdiy.top/usr/uploads/music.jpg'
     },
-    {
-      name: '王都グランセル',
-      artist: 'Falcom Sound Team jdk',
-      url: 'https://music.163.com/song/media/outer/url?id=731355.mp3',
-      cover:
-        'https://p1.music.126.net/kn6ugISTonvqJh3LHLaPtQ==/599233837187278.jpg'
+{
+        name: 'Something Just Like This',
+        artist: 'The Chainsmokers',
+        url: 'https://aws.ezdiy.top/usr/uploads/2024/03/3631654791.mp3',
+cover: 'https://aws.ezdiy.top/usr/uploads/music.jpg'
+    },
+{
+        name: 'Somebody',
+        artist: 'The Chainsmokers',
+        url: 'https://aws.ezdiy.top/usr/uploads/2024/03/2033053298.mp3',
+cover: 'https://aws.ezdiy.top/usr/uploads/music.jpg'
+    },
+{
+        name: 'Birds',
+        artist: 'Coldplay',
+        url: 'https://aws.ezdiy.top/usr/uploads/2024/03/3334305012.mp3',
+cover: 'https://aws.ezdiy.top/usr/uploads/music.jpg'
+    },
+{
+        name: 'Everglow',
+        artist: 'Coldplay',
+        url: 'https://aws.ezdiy.top/usr/uploads/2024/03/979776891.mp3',
+cover: 'https://aws.ezdiy.top/usr/uploads/music.jpg'
+    },
+{
+        name: 'The Scientist',
+        artist: 'Coldplay',
+        url: 'https://aws.ezdiy.top/usr/uploads/2024/03/3961152017.mp3',
+cover: 'https://aws.ezdiy.top/usr/uploads/music.jpg'
+    },
+{
+        name: 'Up&Up',
+        artist: 'Coldplay',
+        url: 'https://aws.ezdiy.top/usr/uploads/2024/03/3566958616.mp3',
+cover: 'https://aws.ezdiy.top/usr/uploads/music.jpg'
+    },
+{
+        name: 'Yellow',
+        artist: 'Coldplay',
+        url: 'https://aws.ezdiy.top/usr/uploads/2024/03/605298900.mp3',
+cover: 'https://aws.ezdiy.top/usr/uploads/music.jpg'
+    },
+{
+        name: 'Paradise',
+        artist: 'Coldplay',
+        url: 'https://aws.ezdiy.top/usr/uploads/2024/03/2935966164.mp3',
+cover: 'https://aws.ezdiy.top/usr/uploads/music.jpg'
+    },
+{
+        name: '泪桥',
+        artist: '伍佰',
+        url: 'https://aws.ezdiy.top/usr/uploads/2024/03/1639156851.mp3',
+cover: 'https://aws.ezdiy.top/usr/uploads/music.jpg'
+    },
+{
+        name: '浪人情歌',
+        artist: '伍佰',
+        url: 'https://aws.ezdiy.top/usr/uploads/2024/03/1479668365.mp3',
+cover: 'https://aws.ezdiy.top/usr/uploads/music.jpg'
+    },
+{
+        name: '挪威的森林',
+        artist: '伍佰',
+        url: 'https://aws.ezdiy.top/usr/uploads/2024/03/3779614231.mp3',
+cover: 'https://aws.ezdiy.top/usr/uploads/music.jpg'
+    },
+{
+        name: '世界第一等',
+        artist: '伍佰',
+        url: 'https://aws.ezdiy.top/usr/uploads/2024/03/991189885.mp3',
+cover: 'https://aws.ezdiy.top/usr/uploads/music.jpg'
+    },
+{
+        name: '晚风',
+        artist: '伍佰',
+        url: 'https://aws.ezdiy.top/usr/uploads/2024/03/1792375329.mp3',
+cover: 'https://aws.ezdiy.top/usr/uploads/music.jpg'
+    },
+{
+        name: '梦醒时分',
+        artist: '伍佰',
+        url: 'https://aws.ezdiy.top/usr/uploads/2024/03/1108208304.mp3',
+cover: 'https://aws.ezdiy.top/usr/uploads/music.jpg'
+    },
+{
+        name: '挪威的森林',
+        artist: '伍佰',
+        url: 'https://aws.ezdiy.top/usr/uploads/2024/03/865957062.mp3',
+cover: 'https://aws.ezdiy.top/usr/uploads/music.jpg'
+    },
+{
+        name: '再度重相逢',
+        artist: '伍佰',
+        url: 'https://aws.ezdiy.top/usr/uploads/2024/03/491280438.mp3',
+cover: 'https://aws.ezdiy.top/usr/uploads/music.jpg'
+    },
+{
+        name: '突然的自我',
+        artist: '伍佰',
+        url: 'https://aws.ezdiy.top/usr/uploads/2024/03/3968683136.mp3',
+cover: 'https://aws.ezdiy.top/usr/uploads/music.jpg'
+    },
+{
+        name: 'Last Dance',
+        artist: '伍佰',
+        url: 'https://aws.ezdiy.top/usr/uploads/2024/03/3152738773.mp3',
+cover: 'https://aws.ezdiy.top/usr/uploads/music.jpg'
+    },
+{
+        name: '让我留在你身边',
+        artist: '陈奕迅',
+        url: 'https://aws.ezdiy.top/usr/uploads/2024/03/719237898.mp3',
+cover: 'https://aws.ezdiy.top/usr/uploads/music.jpg'
+    },
+{
+        name: '婚礼的祝福',
+        artist: '陈奕迅',
+        url: 'https://aws.ezdiy.top/usr/uploads/2024/03/2567713459.mp3',
+cover: 'https://aws.ezdiy.top/usr/uploads/music.jpg'
+
+}
+
+const colorThief = new ColorThief();
+const image = new Image();
+const xhr = new XMLHttpRequest();
+const setTheme = (index) => {
+    if (!ap.list.audios[index].theme) {
+        xhr.onload = function(){
+            let coverUrl = URL.createObjectURL(this.response);
+            image.onload = function(){
+                let color = colorThief.getColor(image);
+                ap.theme(`rgb(${color[0]}, ${color[1]}, ${color[2]})`, index);
+                URL.revokeObjectURL(coverUrl)
+            };
+            image.src = coverUrl;
+        }
+        xhr.open('GET', ap.list.audios[index].cover, true);
+        xhr.responseType = 'blob';
+        xhr.send();
     }
+};
+setTheme(ap.list.index);
+ap.on('listswitch', (index) => {
+    setTheme(index);
+});
   ],
   MUSIC_PLAYER_METING: process.env.NEXT_PUBLIC_MUSIC_PLAYER_METING || false, // 是否要开启 MetingJS，从平台获取歌单。会覆盖自定义的 MUSIC_PLAYER_AUDIO_LIST，更多配置信息：https://github.com/metowolf/MetingJS
   MUSIC_PLAYER_METING_SERVER:
